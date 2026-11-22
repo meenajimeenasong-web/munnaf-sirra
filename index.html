@@ -1,29 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUNAF - Join Telegram</title>
+<title>MUNAF - Telegram</title>
 
 <!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+{if(f.fbq)return;n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)
+}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '29512264565052134');
-fbq('track', 'PageView');
+fbq('init','29512264565052134');
+fbq('track','PageView');
 </script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=29512264565052134&ev=PageView&noscript=1"/>
-</noscript>
 
 <style>
 *{
@@ -34,19 +32,23 @@ box-sizing:border-box;
 
 body{
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#0f172a,#111827);
+background:linear-gradient(135deg,#020617,#172554);
 color:white;
 text-align:center;
 padding:20px;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .container{
+width:100%;
 max-width:420px;
-margin:30px auto;
 background:#1e293b;
 padding:25px;
-border-radius:18px;
-box-shadow:0 0 25px rgba(0,0,0,0.4);
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,.4);
 }
 
 .profile{
@@ -59,9 +61,9 @@ margin-bottom:15px;
 }
 
 h1{
-font-size:28px;
-margin-bottom:10px;
+font-size:30px;
 color:#22c55e;
+margin-bottom:10px;
 }
 
 p{
@@ -90,21 +92,22 @@ margin:20px 0;
 }
 
 .features p{
-margin:8px 0;
+margin:9px 0;
+font-size:15px;
 }
 
 .btn{
 display:block;
 width:100%;
 padding:16px;
-margin-top:15px;
+margin:15px 0;
 background:#229ED9;
 color:white;
 text-decoration:none;
-font-size:20px;
+font-size:19px;
 font-weight:bold;
 border-radius:12px;
-transition:0.3s;
+transition:.3s;
 }
 
 .btn:hover{
@@ -112,16 +115,9 @@ background:#168ac2;
 transform:scale(1.02);
 }
 
-.timer{
-margin-top:20px;
-color:#facc15;
-font-weight:bold;
-font-size:18px;
-}
-
 .disclaimer{
 font-size:12px;
-color:#94a3b8;
+color:#cbd5e1;
 margin-top:20px;
 }
 </style>
@@ -131,7 +127,6 @@ margin-top:20px;
 
 <div class="container">
 
-<!-- Google Drive Profile Image -->
 <img class="profile"
 src="https://drive.google.com/thumbnail?id=1bfeTbTuJNc0s4d7mg2v5boqZ01YDUzUm&sz=w500"
 alt="MUNAF Profile">
@@ -140,40 +135,46 @@ alt="MUNAF Profile">
 
 <p>Welcome to our official Telegram channel</p>
 
-<!-- One Line Above Button -->
+<!-- TOP BUTTON -->
+<a class="btn join-btn"
+href="https://t.me/+Cn7LxezoM-s2OGJl"
+target="_blank"
+rel="noopener noreferrer">
+🚀 JOIN TELEGRAM NOW
+</a>
+
 <div class="line">
-Join Telegram for Daily Market Updates & Analysis
+Daily Market Updates & Educational Analysis
 </div>
 
 <div class="features">
-<p>✅ NIFTY Market Analysis</p>
+<p>✅ NIFTY Market Education</p>
 <p>✅ BANKNIFTY Updates</p>
 <p>✅ SENSEX Market View</p>
 <p>✅ Daily Market Insights</p>
 <p>✅ Educational Market Content</p>
 </div>
 
-<!-- Only One Button -->
+<!-- BOTTOM BUTTON -->
 <a class="btn join-btn"
-href="https://t.me/+Cn7LxezoM-s2OGJl">
+href="https://t.me/+Cn7LxezoM-s2OGJl"
+target="_blank"
+rel="noopener noreferrer">
 🚀 JOIN TELEGRAM NOW
 </a>
 
-<p class="timer">
-Redirecting in <span id="count">60</span> seconds...
-</p>
-
 <p class="disclaimer">
-Disclaimer: Market information is for educational purposes only.
-Trading involves risk. Do your own research.
+Disclaimer: Content is for educational purposes only.
+Market investments involve risk. No guaranteed returns.
 </p>
 
 </div>
 
 <script>
+// Track both button clicks
+document.querySelectorAll('.join-btn').forEach(function(button){
 
-// Subscribe Event on Telegram Button Click
-document.querySelector('.join-btn').addEventListener('click',function(){
+button.addEventListener('click',function(){
 
 if(typeof fbq === 'function'){
 fbq('track','Subscribe');
@@ -181,28 +182,7 @@ fbq('track','Subscribe');
 
 });
 
-// 60 Second Auto Redirect
-var seconds=60;
-var counter=document.getElementById('count');
-
-if(window.self===window.top){
-
-var timer=setInterval(function(){
-
-seconds--;
-counter.innerText=seconds;
-
-if(seconds<=0){
-
-clearInterval(timer);
-window.location.href='https://t.me/+Cn7LxezoM-s2OGJl';
-
-}
-
-},1000);
-
-}
-
+});
 </script>
 
 </body>
